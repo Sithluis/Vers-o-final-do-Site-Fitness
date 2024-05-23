@@ -1,9 +1,7 @@
-@charset "UTF-8";
-
 /* background-image: url(../imagens/saudeFundo.jpg); */
  /* #28282b  "cor"*/
 
-body, html {
+ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -27,20 +25,6 @@ body {
     align-items: center;
     padding: 10px 20px;
     height: 50px;
-}
-
-.hamburguer {
-    position: absolute;
-    margin-left: 88vw;
-}
-
-.hamburguer, .close {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    display: none;
 }
 
 .nav-links-desktop {
@@ -94,11 +78,27 @@ body {
     padding-bottom: 1.2rem;
 }
 
+.hamburguer {
+    width: 100vw;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
 .close {
     margin-top: 20px;
     margin-left: 20px;
     display: block;
     align-self: end;
+
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
 }
 
 .flex {
