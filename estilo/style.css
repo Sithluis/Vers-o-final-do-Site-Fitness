@@ -1,91 +1,108 @@
 @charset "UTF-8";
 
 /* background-image: url(../imagens/saudeFundo.jpg); */
+ /* #28282b  "cor"*/
 
-*{
-    padding: 0px;
-    margin: 0px;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body {
-    overflow-x: hidden; 
-    overflow-y: hidden;
-}
-
-nav ul li {
-    display: inline-block;
-    position: relative;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 13px;
-}
-
-nav ul li a:hover {
-    color: rgb(250, 172, 172);
-    border-radius: 10px;
-    transition-duration: .4s;
-}
-
-nav ul li #login {
-    color: rgb(250, 172, 172);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.397);
-    border-radius: 10px;
-    border: 2px solid white;
-}
-
-nav ul li #login:hover {
-    color: rgb(248, 144, 144);
-    background-color: #4c4c52;
-    border: 2px solid #fff;
-    box-shadow: 2px solid rgba(0, 0, 0, 0.450);
-    transition-duration: .4s;
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #28282b;
-    height: 8vh;
-    overflow-x: hidden; 
-    overflow-y: hidden;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-}
-
-.nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
-}
-
-.mobile-menu{
-    display: none;
-    cursor: pointer;
-}
-
-.mobile-menu .line1, 
-.mobile-menu .line2, 
-.mobile-menu .line3 {
-    width: 32px;
-    height: 2px;
-    background-color: #ffffff;
-    margin: 8px;
-    transition: 0.3s;
-}
-
-main {
-    background: url(../imagens/fundoCalis2.jpg) no-repeat center center;
+    background-image: url(../imagens/fundo2.jpg);
+    background-position: center;
     background-size: cover;
-    height: 92vh; 
-    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: #28282b;
+    color: #ccc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.hamburguer {
+    position: absolute;
+    margin-left: 88vw;
+}
+
+.hamburguer, .close {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+.nav-links-desktop {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin: auto;
+}
+
+.nav-links-desktop li {
+    padding: 0 15px;
+}
+
+.nav-links-desktop a, .nav-links-mobile a {
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-links-desktop a:hover {
+    color: #ccccccc0;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    z-index: 5;
+}
+
+.nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+    width: 80%;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links-mobile li {
+    border-bottom: 1px solid #787272;
+    padding-bottom: 1.2rem;
+}
+
+.close {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: block;
+    align-self: end;
+}
+
+.flex {
+    display: flex;
 }
 
 #search {
@@ -129,13 +146,11 @@ section h1 {
     font-size: 2.2rem;
     font-weight: bolder;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, #000000, #ff0505);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
 }
 
 section p {
-    font-size: 17px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
     font-weight: bold;
@@ -187,42 +202,17 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 768px) {
 
-    body {
-        overflow-x: hidden; 
-        overflow-y: hidden;
+    html {
+        font-size: 12px;
     }
 
-    main {
-        overflow-x: hidden; 
+    .nav-links-desktop {
+        display: none;
     }
 
-    nav {
-        overflow-x: hidden; 
-        overflow-y: hidden;
-    }
-
-    .nav-list {
-        position: absolute;
-        top: 8vh;
-        right: 0;
-        width: 50vw;
-        height: 92vh;
-        background: #28282b;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translate(100%);
-        transition: transform 0.3s ease-in;
-    }
-
-    .nav-list li {
-        margin-left: 0;
-        opacity: 0;
-    }
-
-    .mobile-menu {
+    .hamburguer {
         display: block;
     }
 
@@ -246,9 +236,6 @@ footer {
         text-align: center;
         font-size: 1.5rem; /* Reduzindo o tamanho do título */
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        background: linear-gradient(to right, #fa9393, #888888);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
     
     section p {
@@ -304,36 +291,4 @@ footer {
         border: 2px solid white;
         transition-duration: .4s;
     }
-}
-
-
-
-.nav-list.active {
-    transform: translate(0);
-}
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(
-            0
-        );
-    }
-}
-
-.mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.mobile-menu.active .line2 {
-    opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
 }
